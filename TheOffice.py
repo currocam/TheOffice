@@ -67,3 +67,9 @@ def ProcesarPersonaje(personaje_str):
         textoFiltrado =cleanTexto(texto_raw)
         textoProcesado =Lematizacion(textoFiltrado)
         return textoProcesado
+
+def generarDataFramePersonajes(lista_df, lista_per):
+        result = pd.concat(lista_df, keys=lista_per).reset_index()
+        del result['level_1']
+        df_per = result.rename(columns={"level_0": "Personaje"})
+        return df_per

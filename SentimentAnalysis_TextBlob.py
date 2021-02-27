@@ -67,14 +67,12 @@ def test_Analisis(df):
 
 
 if __name__ == '__main__':
-    lista = ['Kevin', 'Ryan']
+    lista_per = ['Kevin', 'Ryan']
     df_raw = pd.read_csv(url_csv)
-    result = []
-    for personaje_str in lista:
+    lista_df = []
+    for personaje_str in lista_per:
         texto = TheOffice.textoPersonaje(personaje_str, df_raw)
         df_per = TextBlob_Sentimientos(texto)
-        result.append(df_per)
-    result = pd.concat(result, keys=lista).reset_index()
-    del result['level_1']
-    result = result.rename(columns={"level_0": "Personaje"})
-    graph_Sentimientos(result)
+        lista_df.append(df_per)
+    df=TheOffice.generarDataFramePersonajes(lista_df, lista_per)
+    graph_Sentimientos(df)
