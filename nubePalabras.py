@@ -2,21 +2,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
-
+import TheOffice
 url_csv = "TheOfficeLines.csv"
-
-
-def textoPersonaje(personaje_str):
-    """
-    Devuelve un str con todas las líneas de un personaje.
-    """
-    df_personaje = df.loc[df['speaker'] == personaje_str]['line']
-    if df_personaje.empty:
-        print("No hay registros para ese personaje")
-    else:
-        texto = df_personaje.to_string(na_rep=' ', header=False, index=False,)
-        return texto
-
 
 def wordcloudImagen(texto):
     """
@@ -32,6 +19,6 @@ def wordcloudImagen(texto):
 
 if __name__ == '__main__':
     df = pd.read_csv(url_csv)
-    texto = textoPersonaje("Kevin")
+    texto = TheOffice.textoPersonaje("Kevin", df)
     if texto:
         wordcloudImagen(texto)
