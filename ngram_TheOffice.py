@@ -2,8 +2,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-import TheOffice
-from TheOffice import url_csv
+from TheOffice import ProcesarPersonaje
 import nltk
 
 
@@ -41,9 +40,6 @@ def nGrams_graph(serie_Ngrams):
 
 if __name__ == '__main__':
     personaje_str='Oscar'
-    df = pd.read_csv(url_csv)
-    texto_raw = TheOffice.textoPersonaje(personaje_str, df)
-    textoFiltrado = TheOffice.cleanTexto(texto_raw)
-    textoProcesado = TheOffice.Lematizacion(textoFiltrado)
+    textoProcesado=ProcesarPersonaje(personaje_str)
     serie_Ngrams = getNgrams(textoProcesado, 3)
     nGrams_graph(serie_Ngrams[:25])

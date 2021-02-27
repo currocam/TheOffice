@@ -60,3 +60,10 @@ def textoPersonaje(personaje_str, df):
         texto_raw = df_personaje.to_string(
             na_rep=' ', header=False, index=False,)
         return texto_raw
+
+def ProcesarPersonaje(personaje_str):
+        df = pd.read_csv(url_csv)
+        texto_raw = textoPersonaje(personaje_str, df)
+        textoFiltrado =cleanTexto(texto_raw)
+        textoProcesado =Lematizacion(textoFiltrado)
+        return textoProcesado

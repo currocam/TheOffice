@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import TheOffice
-url_csv = "TheOfficeLines.csv"
+from TheOffice import url_csv
 
 def wordcloudImagen(texto):
     """
