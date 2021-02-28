@@ -48,6 +48,7 @@ def graph_Sentimientos(df):
         hue=df.Personaje,
         kind="kde",
         palette='rocket')
+    plt.savefig('TextBlob_AnalisisSentimientos.png')
     plt.show()
 
 
@@ -67,12 +68,12 @@ def test_Analisis(df):
 
 
 if __name__ == '__main__':
-    lista_per = ['Kevin', 'Ryan']
+    lista_per = ['Jim', 'Pam']
     df_raw = pd.read_csv(url_csv)
     lista_df = []
     for personaje_str in lista_per:
         texto = TheOffice.textoPersonaje(personaje_str, df_raw)
         df_per = TextBlob_Sentimientos(texto)
         lista_df.append(df_per)
-    df=TheOffice.generarDataFramePersonajes(lista_df, lista_per)
+    df = TheOffice.generarDataFramePersonajes(lista_df, lista_per)
     graph_Sentimientos(df)
