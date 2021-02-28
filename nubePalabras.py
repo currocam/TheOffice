@@ -4,8 +4,9 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import TheOffice
 from TheOffice import url_csv
+import sys
 
-def wordcloudImagen(texto):
+def wordcloudImagen(texto, personaje):
     """
     Genera una una imagen con las palabras más comunes del personaje.
     """
@@ -14,11 +15,15 @@ def wordcloudImagen(texto):
     wc.generate(texto)
     plt.imshow(wc, interpolation='bilinear')
     plt.axis("off")
-    plt.show()
+    ruta='{0}_nube.png'.format(personaje)
+    plt.savefig(ruta)
 
+    plt.show()
+    
 
 if __name__ == '__main__':
     df = pd.read_csv(url_csv)
-    texto = TheOffice.textoPersonaje("Kevin", df)
+    personaje=sys.argv[1]
+    texto = TheOffice.textoPersonaje(personaje, df)
     if texto:
-        wordcloudImagen(texto)
+        wordcloudImagen(texto, personaje)
