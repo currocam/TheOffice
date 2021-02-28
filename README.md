@@ -17,26 +17,26 @@ This following scripts explore different aspects of Natural Language Processing 
 ```
 python nubePalabras.py Pam 
 ```
-![Pam_nube.png](Pam_nube.png)
+![images/Pam_nube.png](images/Pam_nube.png)
 
 ### n-gram
 
 ```
 python ngram_TheOffice.py
 ```
-![Jim_n-gramas.png](Jim_n-gramas.png)
+![images/Jim_n-gramas.png](images/Jim_n-gramas.png)
 
 ### Sentiment analysis using TextBlob
 ```
 python SentimentAnalysis_TextBlob.py 
 ```
-![TextBlob_AnalisisSentimientos.png](TextBlob_AnalisisSentimientos.png)
+![images/TextBlob_AnalisisSentimientos.png](images/TextBlob_AnalisisSentimientos.png)
 
 ### Sentiment analysis using VADER
 ```
 python SentimentAnalysis_Vader.py 
 ```
-![Vader_AnalisisSentimientos.png](Vader_AnalisisSentimientos.png)
+![images/Vader_AnalisisSentimientos.png](images/Vader_AnalisisSentimientos.png)
 
 ### Affinity analysis
 Representing polarity and subjectivity obteined  from Pam and Jim's lines in scenes where both appear. 
@@ -45,7 +45,7 @@ Representing polarity and subjectivity obteined  from Pam and Jim's lines in sce
 python afinidadPersonajes.py
 ```
 
-![Afinidad_Pam_Jim.png](Afinidad_Pam_Jim.png)
+![images/Afinidad_Pam_Jim.png](images/Afinidad_Pam_Jim.png)
 
 
 
