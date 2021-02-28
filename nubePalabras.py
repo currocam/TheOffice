@@ -17,7 +17,6 @@ def wordcloudImagen(texto, personaje):
     plt.axis("off")
     ruta='{0}_nube.png'.format(personaje)
     plt.savefig(ruta)
-
     plt.show()
     
 
