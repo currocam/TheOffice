@@ -30,7 +30,6 @@ def getNgrams(textoProcesado, N):
 def nGrams_graph(serie_Ngrams, personaje_str):
     index = [', '.join(tup)for tup in serie_Ngrams.index]
     sns.barplot(y=index, x=serie_Ngrams, color="b", orient='h', palette="deep")
-    #plt.xticks([])
     plt.title(
         "Trigramas más frecuentes de {0} en The Office".format(personaje_str),
         fontweight='bold')
