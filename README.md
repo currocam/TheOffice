@@ -33,7 +33,7 @@ python SentimentAnalysis_TextBlob.py
 python afinidadPersonajes.py
 ```
 
-![Afinidad de Pam_Jim.png](Afinidad de Pam_Jim.png)
+![Afinidad_Pam_Jim.png](Afinidad_Pam_Jim.png)
 
 
 
