@@ -13,21 +13,33 @@ This following scripts explore different aspects of Natural Language Processing 
 - Python 3.8.5
 
 ## Example of use
-
+### Wordcloud
 ```
 python nubePalabras.py Pam 
 ```
 ![Pam_nube.png](Pam_nube.png)
+
+### n-gram
 
 ```
 python ngram_TheOffice.py
 ```
 ![Jim_n-gramas.png](Jim_n-gramas.png)
 
+### Sentiment analysis using TextBlob
 ```
 python SentimentAnalysis_TextBlob.py 
 ```
 ![TextBlob_AnalisisSentimientos.png](TextBlob_AnalisisSentimientos.png)
+
+### Sentiment analysis using VADER
+```
+python SentimentAnalysis_Vader.py 
+```
+![Vader_AnalisisSentimientos.png](Vader_AnalisisSentimientos.png)
+
+### Affinity analysis
+Representing polarity and subjectivity obteined  from Pam and Jim's lines in scenes where both appear. 
 
 ```
 python afinidadPersonajes.py
