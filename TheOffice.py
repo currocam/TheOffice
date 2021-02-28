@@ -6,7 +6,9 @@ from nltk.corpus import stopwords
 from nltk import RegexpTokenizer
 url_csv = "TheOfficeLines.csv"
 ADDITIONAL_STOPWORDS = ['oh', 'na', 'uh', 'boo', 'ha', 'mm',
-                        'hmm', 'wow', 'uhm', 'um', 'th', 'hi', 'shh', 'bye', 'okay', 'ok', 'speech', 'whoa', 'ooh' ]
+                        'hmm', 'wow', 'uhm', 'um', 'th', 'hi',
+                        'shh', 'bye', 'okay', 'ok', 'speech', 
+                        'whoa', 'ooh', 'hey', 'wo', 'ow', 'yeah', 'stop', 'wait', 'w', 'k']
 
 
 def cleanTexto(texto_raw):
@@ -49,6 +51,7 @@ def Lematizacion(textoFiltrado):
     textoProcesado = [lemmatizer.lemmatize(word) for word in textoFiltrado]
     return textoProcesado
 
+
 def textoPersonaje(personaje_str, df):
     """
     Devuelve un str con todas las líneas de un personaje.
@@ -61,15 +64,17 @@ def textoPersonaje(personaje_str, df):
             na_rep=' ', header=False, index=False,)
         return texto_raw
 
+
 def ProcesarPersonaje(personaje_str):
-        df = pd.read_csv(url_csv)
-        texto_raw = textoPersonaje(personaje_str, df)
-        textoFiltrado =cleanTexto(texto_raw)
-        textoProcesado =Lematizacion(textoFiltrado)
-        return textoProcesado
+    df = pd.read_csv(url_csv)
+    texto_raw = textoPersonaje(personaje_str, df)
+    textoFiltrado = cleanTexto(texto_raw)
+    textoProcesado = Lematizacion(textoFiltrado)
+    return textoProcesado
+
 
 def generarDataFramePersonajes(lista_df, lista_per):
-        result = pd.concat(lista_df, keys=lista_per).reset_index()
-        del result['level_1']
-        df_per = result.rename(columns={"level_0": "Personaje"})
-        return df_per
+    result = pd.concat(lista_df, keys=lista_per).reset_index()
+    del result['level_1']
+    df_per = result.rename(columns={"level_0": "Personaje"})
+    return df_per
