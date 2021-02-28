@@ -4,7 +4,7 @@ import pandas as pd
 import seaborn as sns
 from TheOffice import ProcesarPersonaje
 import nltk
-
+import sys
 
 
 def getNgrams(textoProcesado, N):
@@ -27,19 +27,22 @@ def getNgrams(textoProcesado, N):
     return serie
 
 
-def nGrams_graph(serie_Ngrams):
+def nGrams_graph(serie_Ngrams, personaje_str):
     index = [', '.join(tup)for tup in serie_Ngrams.index]
     sns.barplot(y=index, x=serie_Ngrams, color="b", orient='h', palette="deep")
-    plt.xticks([])
+    #plt.xticks([])
     plt.title(
         "Trigramas más frecuentes de {0} en The Office".format(personaje_str),
         fontweight='bold')
     plt.xlabel("Frecuencia")
+    ruta='{0}_n-gramas.png'.format(personaje_str)
+    plt.savefig(ruta)
     plt.show()
 
 
 if __name__ == '__main__':
-    personaje_str='Oscar'
-    textoProcesado=ProcesarPersonaje(personaje_str)
+    personaje_str =sys.argv[1]
+    textoProcesado = ProcesarPersonaje(personaje_str)
     serie_Ngrams = getNgrams(textoProcesado, 3)
-    nGrams_graph(serie_Ngrams[:25])
+    num_entradas=25
+    nGrams_graph(serie_Ngrams[:num_entradas], personaje_str)
