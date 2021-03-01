@@ -22,7 +22,7 @@ python nubePalabras.py Pam
 ### n-gram
 
 ```
-python ngram_TheOffice.py
+python ngram_TheOffice.py Jim
 ```
 ![images/Jim_n-gramas.png](images/Jim_n-gramas.png)
 
