@@ -1,4 +1,4 @@
-![https://es.wikipedia.org/wiki/The_Office#/media/Archivo:The_Office_US_logo.svg](The_Office_US_logo.svg)
+![https://es.wikipedia.org/wiki/The_Office#/media/Archivo:The_Office_US_logo.svg](images/The_Office_US_logo.svg)
 # Natural Language Processing with Python for The Office
 This following scripts explore different aspects of Natural Language Processing using the transcription of the The Office series. It was created with **educational purposes**. I have used this dataset [The Office (US) - Complete Dialogue/Transcript](https://www.kaggle.com/nasirkhalid24/the-office-us-complete-dialoguetranscript/).
 
